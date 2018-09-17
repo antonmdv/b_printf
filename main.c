@@ -6,7 +6,7 @@
 /*   By: amedvede <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 18:17:49 by amedvede          #+#    #+#             */
-/*   Updated: 2018/09/15 12:25:49 by amedvede         ###   ########.fr       */
+/*   Updated: 2018/09/16 22:27:22 by amedvede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -18,14 +18,15 @@ int main(void)
 	
 	//printf("");
 	//b_printf("");
-	
+
 	char c = 'a';
 	char *str = "this is a string";
 	int num = 42;
 	unsigned int unnum = -42;
 	unsigned int oct = 10;
 	unsigned int hex = 10;
-	
+
+
 	/*
 	 * Add return int to b_printf
 	 * Skip %       d
@@ -36,16 +37,17 @@ int main(void)
 
 	printf("\n\n");
 
-	b_printf(" char: %c\n str: %s\n int(d): %d\n int(i): %i\n unsigned int: %u\n octal: %o\n hex: %x \n pointer: %p", c, str, num, num, unnum, oct, hex, &str);
+	b_printf(" char: %c \n str: %s\n int(d): %d\n int(i): %i\n unsigned int: %u\n octal: %o\n hex: %x \n pointer: %p", c, str, num, num, unnum, oct, hex, &str);
 	//b_printf("HELLO %s %s", "HI", "HOLA");
 	
+	//printf("\n\n");
 	/*
 	char *str = "STRING";
 	int num = 10;	
 	char ch = 'a';
 
 	*/
-//	unsigned int dbnum = -10;
+	//unsigned int dbnum = -10;
 	
 	//char *str = "Privet";
 	/*
@@ -54,6 +56,9 @@ int main(void)
 	b_printf("\nadrs: %p\n",&str);
 	*/
 
-	b_printf("\n\n%o\n", -3);	
+	b_printf("\n\n %o \n", -3);
+	//char c = 'a';
+	//b_printf("hi\n%c\nhello",c);
+
 	return (0);
 }
