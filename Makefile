@@ -6,13 +6,13 @@
 #    By: amedvede <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/12 18:11:03 by amedvede          #+#    #+#              #
-#    Updated: 2018/09/16 23:05:30 by amedvede         ###   ########.fr        #
+#    Updated: 2018/09/17 22:21:35 by amedvede         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 LIBNAME = libftprintf.a
-LIBFILES = b_printf.c src/helpers.c
-OBJFILES = b_printf.o helpers.o
+LIBFILES = b_printf.c src/*.c
+OBJFILES = helpers2.o chooser.o b_printf.o helpers.o
 COMPILE  = gcc -c -Wall -Werror -Wextra
 MAKELIB = ar rc
 OPTIMIZE = ranlib

@@ -6,13 +6,13 @@
 /*   By: amedvede <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/14 17:29:11 by amedvede          #+#    #+#             */
-/*   Updated: 2018/09/14 17:58:18 by amedvede         ###   ########.fr       */
+/*   Updated: 2018/09/18 14:02:34 by amedvede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "b_printf.h"
 
-void	putnbr(int nbr)
+void	putnbr(int nbr, mystruct *datastruct)
 {
 	char min;
 	char num;
@@ -22,22 +22,24 @@ void	putnbr(int nbr)
 	{
 		nbr *= -1;
 		write(1, &min, 1);
+		datastruct->strlen++;
 	}
 	if (nbr >= 10)
-		putnbr(nbr / 10);
+		putnbr((nbr / 10), datastruct);
 	num = (nbr % 10) + '0';
 	write(1, &num, 1);
+	datastruct->strlen++;
 }
 
-void	putunsignedint(unsigned int nbr)
+void	putunsignedint(unsigned int nbr, mystruct *datastruct)
 {
 	if (nbr >= 10)
 	{
-		putunsignedint(nbr / 10);
-		putunsignedint(nbr % 10);
+		putunsignedint(nbr / 10, datastruct);
+		putunsignedint(nbr % 10, datastruct);
 	}
 	if (nbr < 10)
-		putnbr(nbr);
+		putnbr(nbr, datastruct);
 }
 
 void	putstr(char *str)
